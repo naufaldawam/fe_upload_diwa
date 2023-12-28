@@ -5,7 +5,7 @@ class UploadFileService {
     const formData = new FormData();
     formData.append("file", file);
 
-    const apiUrl = "http://localhost:8080/customers/upload";
+    const apiUrl = "http://10.32.4.109:8080/customers/upload";
 
     const headers = {
       "Content-Type": "multipart/form-data",
