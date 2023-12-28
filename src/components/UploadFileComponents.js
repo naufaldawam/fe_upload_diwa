@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import UploadFileService from "../services/UploadFileService";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const FileUpload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -20,7 +21,7 @@ const FileUpload = () => {
 
       try {
         await UploadFileService.upload(selectedFile, onUploadProgress);
-        alert("File uploaded successfully!");
+        alert("Balance berhasil ditambahkan silahkan cek jurnal!");
       } catch (error) {
         console.error("Error uploading file:", error);
         alert("Failed to upload file. Please try again.");
@@ -36,8 +37,10 @@ const FileUpload = () => {
   return (
     <div>
       <h2>File Upload</h2>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload</button>
+      <label className="btn btn-default">
+        <input type="file" onChange={handleFileChange} />
+      </label>
+      <button className="btn btn-success" onClick={handleUpload}>Upload</button>
       {uploadProgress > 0 && (
         <div>
           <p>Upload Progress: {uploadProgress}%</p>
