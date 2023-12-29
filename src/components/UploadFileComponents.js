@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import UploadFileService from "../services/UploadFileService";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const FileUpload = () => {
+const UploadFileComponents = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadProgress, setUploadProgress] = useState(0);
-
+  console.log("file select" + selectedFile);
+  console.log("file upload" + uploadProgress);
   const handleFileChange = (e) => {
     setSelectedFile(e.target.files[0]);
   };
@@ -51,4 +52,4 @@ const FileUpload = () => {
   );
 };
 
-export default FileUpload;
+export default UploadFileComponents;
